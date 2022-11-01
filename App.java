@@ -1,3 +1,4 @@
+
 // < Librerias >
 import java.util.Scanner;
 import java.awt.Desktop;
@@ -124,12 +125,13 @@ public class App {
             int elemento_random = r.nextInt(palabras.length);
 
             char[] aciertos = new char[palabras[elemento_random].length()];
-            boolean letra_encontrada = false;
+            boolean letra_encontrada;
             int relleno_letras = 0;
 
             // # El juego se repite durante N Intentos
             LimpiarConsola();
             while (true) {
+                letra_encontrada = false;                
                 StringBuilder letra = new StringBuilder();
                 System.out.print("\nPALABRA A ADIVINAR: ");
 
@@ -157,7 +159,7 @@ public class App {
 
                     if (palabras[elemento_random].charAt(t) == letra_ingresada) {
                         aciertos[t] = palabras[elemento_random].charAt(t);
-                        letra_encontrada = true;
+                        letra_encontrada = true; // Es esta
                         relleno_letras++;
                         break;
                     }
